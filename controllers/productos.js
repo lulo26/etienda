@@ -2,15 +2,16 @@
 
 // conectmos el controlador con su modelo correspondiente
 
+const {response} = require("express");
 let Producto = require("../models/productos");
 
-// tola la logica de un cmd tipico listartodosm, listarpor id, crear, actualizar, borrar...
+// toda la logica de un cmd típico listartodos, listar por id, crear, actualizar, borrar...
 
 const listartodos = async (req, res) =>{
 try {
 // consutar todos sin filtro
 
-let listaProductos = Producto.find().exec();
+let listaProductos = await Producto.find().exec();
 res.status(200).send({
     exito: true,
     listaProductos,
@@ -23,6 +24,44 @@ res.status(200).send({
 }
 }
 
+// crear nuevo
+
+const nuevo = async (req, res) => {
+    // llega el objeto en el body del request
+
+    let datos = {
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        imagen: req.body.imagen,
+        marca: req.body.marca,
+        precio: req.body.precio,
+        existencia: req.body.existencia,
+        rating: req.body.rating,
+        numRevisiones: req.body.numRevisiones,
+        estaOfertado: req.body.estaOfertado
+    }
+
+    try {
+    // instancia del modelo producto (collection)
+
+    const productoNuevo = new Producto(datos)
+    // guardamos en mongo
+    productoNuevo.save() // escribe en mongo
+    
+    return res.send({
+        estado:true,
+        mensaje:"inserción exitosa !",
+    })
+    
+    } catch (error) {
+        return res.send({
+            estado:false,
+            mensaje:`ha ocurrido un error en la consulta ${error}`
+        })
+    }
+}
+
 module.exports = {
-    listartodos
+    listartodos,
+    nuevo
 }

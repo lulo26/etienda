@@ -23,7 +23,7 @@ app.use("/api", productoRta)
 
 
 
-app. listen(4000, ()=>{
+app.listen(4000, ()=>{
     console.log(`listen ${4000}`)
 })
 
