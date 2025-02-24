@@ -116,7 +116,7 @@ try {
  let consulta = await Producto.finByIdAndUpdate(id, datos).exec()
  return res.send({
     estado: true,
-    mensaje: "documento editado"
+    mensaje: "documento editado",
     consulta
  })
 } catch (error) {

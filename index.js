@@ -13,7 +13,7 @@ conexion();
 
 // rutas globales de la app
 const productoRta = require("./routes/productos");
-const productoRta = require("./routes/usuarios");
+const usuariosRta = require("./routes/usuarios");
 
 
 

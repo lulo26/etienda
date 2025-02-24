@@ -19,7 +19,7 @@ const ususarioSchema = Schema(
               required: true,
             },
             esAdmin: {
-                type: boolean,
+                type: Boolean,
                 default: false,
             },
             direccion: {
