@@ -1,5 +1,5 @@
 // instanciamos la capa modelo correspondiente
-let bcrypt = require("bcrypt")
+let bcrypt = require("bcryptjs")
 let Usuarios = require("../models/usuarios")
 let jwt = require('jsonwebtoken')
 

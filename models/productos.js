@@ -1,7 +1,7 @@
 // modelo para la coleccion producto
 // destructuring de la clase mongoose -- solo traigo los metodos que me importan
 
-const {Schema, model, Collection} = require('mongoose')
+const {Schema, model} = require('mongoose')
 
 // creamos el schema
 

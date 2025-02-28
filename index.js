@@ -15,9 +15,6 @@ conexion();
 const productoRta = require("./routes/productos");
 const usuariosRta = require("./routes/usuarios");
 
-
-
-
 // usamos las rutas
 
 app.use("/api", productoRta)

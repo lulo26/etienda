@@ -1,6 +1,6 @@
 const{Schema, model} = require ("mongoose")
 
-const ususarioSchema = Schema(
+const usuarioSchema = Schema(
     {
             nombre: {
               type: String,
@@ -25,7 +25,21 @@ const ususarioSchema = Schema(
             direccion: {
                 type: String,
                 default: "",
-            }
-        
-    }
+            },
+            zip: {
+                type: String,
+                default: "",
+            },
+            ciudad: {
+                type: String,
+                default: "",
+            },
+            pais: {
+                type: String,
+                default: "",
+            },
+    },
+    { collection: "usuarios" }
 )
+
+module.exports = model("Usuario", usuarioSchema);

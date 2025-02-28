@@ -7,6 +7,17 @@ let Producto = require("../models/productos");
 
 // toda la logica de un cmd típico listartodos, listar por id, crear, actualizar, borrar...
 
+/**    
+@description funcion que hace el login o ingreso al sistema con autenticación de 2 factores
+@author Lulo
+@param req la petición con usuario y password
+@param res falso si no existe el ususario, si existe devuelve true y el token en formato con json
+@version 01 -24-02-2025
+@callback funcion asincronica que ejecuta la api
+@function registro en el sistema
+@class Productos
+*/
+
 const listartodos = async (req, res) =>{
 try {
 // consutar todos sin filtro

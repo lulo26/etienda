@@ -10,9 +10,9 @@ const usuariosCtr = require('../controllers/usuarios')
 // rutas que entregara el modulo producto
 
 router.get("/usuarios/listartodos", usuariosCtr.listartodos)
-/* router.post("/producto/nuevo", productoCtr.nuevo);
-router.get("/producto/buscarxid/:id", productoCtr.buscarxid)
-router.delete("/producto/borrarxid/:id", productoCtr.borrarxid)
+router.post("/usuarios/registro", usuariosCtr.registro);
+router.get("/usuarios/login", usuariosCtr.login)
+/*router.delete("/producto/borrarxid/:id", productoCtr.borrarxid)
 router.put("/producto/actualizarxid/:id",  productoCtr.actualizarxid) */
 // ........
 
